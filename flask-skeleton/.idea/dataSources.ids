@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source source="LOCAL" name="SQLite - dev.db [2]" uuid="d03e551a-5f82-4c94-b94d-94bd78a5f844">
+    <database-info product="SQLite" version="3.7.6.3" jdbc-version="2.1" driver-name="SQLiteJDBC" driver-version="native"/>
+    <case-sensitivity plain-identifiers="mixed" quoted-identifiers="mixed"/>
+    <schema name="" catalog=""/>
+    <table name="alembic_version" schema="" catalog="" type="TABLE">
+      <column name="version_num" sqlType="VARCHAR(32)" length="2000000000" precision="10" nullable="false" jdbcType="12"/>
+    </table>
+    <table name="loguser" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4"/>
+      <column name="Matej" sqlType="VARCHAR" length="2000000000" precision="10" nullable="false" jdbcType="12"/>
+      <column name="Stuchlik" sqlType="VARCHAR" length="2000000000" precision="10" nullable="false" jdbcType="12"/>
+      <column name="Muz" sqlType="BOOLEAN" length="2000000000" precision="10" nullable="true" jdbcType="4"/>
+      <column name="datum_insertu" sqlType="DATETIME" length="2000000000" precision="10" nullable="true" jdbcType="12"/>
+      <primary-key columns="id"/>
+      <index name="ix_loguser_Stuchlik" unique="true" columns="Stuchlik"/>
+    </table>
+    <table name="sqlite_sequence" schema="" catalog="" type="TABLE">
+      <column name="name" sqlType="" length="2000000000" precision="10" nullable="true" jdbcType="12"/>
+      <column name="seq" sqlType="" length="2000000000" precision="10" nullable="true" jdbcType="12"/>
+    </table>
+    <table name="user_password_tokens" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4"/>
+      <column name="user_id" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4"/>
+      <column name="value" sqlType="VARCHAR" length="2000000000" precision="10" nullable="false" jdbcType="12"/>
+      <column name="used" sqlType="BOOLEAN" length="2000000000" precision="10" nullable="true" jdbcType="4"/>
+      <column name="expiration_dt" sqlType="DATETIME" length="2000000000" precision="10" nullable="true" jdbcType="12"/>
+      <primary-key columns="id"/>
+      <foreign-key name="#FAKE_user_password_tokens_1" columns="user_id" ref-table="users" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <index name="ix_user_password_tokens_value" unique="true" columns="value"/>
+    </table>
+    <table name="users" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4"/>
+      <column name="activate_token" sqlType="VARCHAR" length="2000000000" precision="10" nullable="false" jdbcType="12"/>
+      <column name="email" sqlType="VARCHAR(64)" length="2000000000" precision="10" nullable="false" jdbcType="12"/>
+      <column name="password_hash" sqlType="VARCHAR(128)" length="2000000000" precision="10" nullable="true" jdbcType="12"/>
+      <column name="username" sqlType="VARCHAR(64)" length="2000000000" precision="10" nullable="false" jdbcType="12"/>
+      <column name="verified" sqlType="BOOLEAN" length="2000000000" precision="10" nullable="false" jdbcType="4"/>
+      <primary-key columns="id"/>
+      <exported-key name="#FAKE_user_password_tokens_1" table="user_password_tokens" schema="" catalog="" columns="user_id"/>
+      <index name="ix_users_username" unique="true" columns="username"/>
+      <index name="ix_users_email" unique="true" columns="email"/>
+    </table>
+  </data-source>
+</component>
