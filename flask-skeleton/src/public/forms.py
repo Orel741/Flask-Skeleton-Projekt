@@ -26,12 +26,12 @@ def safe_characters(s):
 
 class LogUserForm(Form):
 
-    Matej = TextField('Choose your username', validators=[
+    Jan = TextField('Choose your username', validators=[
         Predicate(safe_characters, message="Please use only letters (a-z) and numbers"),
         Length(min=2, max=30, message="Please use between 6 and 30 characters"),
         InputRequired(message="You can't leave this empty")
     ])
-    Stuchlik = TextField('Choose your username', validators=[
+    Orlik = TextField('Choose your username', validators=[
         Predicate(safe_characters, message="Please use only letters (a-z) and numbers"),
         Length(min=2, max=30, message="Please use between 6 and 30 characters"),
         InputRequired(message="You can't leave this empty")
