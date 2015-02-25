@@ -10,8 +10,8 @@ class LogUser(CRUDModel):
     __tablename__ = 'loguser'
     __table_args__ = {'sqlite_autoincrement': True}
     id = Column(Integer, primary_key=True )
-    Matej = Column(String, nullable=False, index=False)
-    Stuchlik = Column(String, nullable=False, index=True)
+    Jan = Column(String, nullable=False, index=False)
+    Orlik = Column(String, nullable=False, index=True)
     Muz = Column(Boolean(name="zena"), default=False)
     datum_insertu= Column(DateTime)
 
