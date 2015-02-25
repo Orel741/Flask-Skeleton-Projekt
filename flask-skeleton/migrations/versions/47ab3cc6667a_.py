@@ -25,7 +25,7 @@ def upgrade():
     sa.PrimaryKeyConstraint('id', name='pk_loguser'),
     sqlite_autoincrement=True
     )
-    op.create_index('ix_loguser_Stuchlik', 'loguser', ['Orlik'], unique=False)
+    op.create_index('ix_loguser_Orlik', 'loguser', ['Orlik'], unique=False)
     ### end Alembic commands ###
 
 
